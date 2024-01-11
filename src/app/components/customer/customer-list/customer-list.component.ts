@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../../services/customer.service';
 import { Customer } from '../../../models/customers.model';
+import { CommonModule} from '@angular/common';
 
 
 @Component({
   selector: 'app-customer-list',
   standalone: true,
-  //imports: [ReactiveFormsModule],
+  imports: [CommonModule],
   templateUrl: './customer-list.component.html',
   styleUrl: './customer-list.component.scss',
 })
 export class CustomerListComponent implements OnInit{
-  tutorials?: Customer[];
+  public customers?: Customer[];
   currentIndex = -1;
   title = '';
 
@@ -21,10 +22,9 @@ export class CustomerListComponent implements OnInit{
   }
 
   retrieveTutorials(): void {
-    console.log('retrieveTutorials(): start');
     this.customerService.getAll().subscribe({
       next: (data) => {
-        this.tutorials = data;
+        this.customers = data;
         console.log(data);
       },
       error: (e) => console.error(e)
