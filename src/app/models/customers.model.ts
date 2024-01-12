@@ -1,8 +1,8 @@
 export class Customer {
-    id!: number;
+    id?: number;
     firstName!:string;
     lastName!: string;
     email!: string;
-    created!:Date ;
-    lastUpdated!:Date;
+    created?:Date ;
+    lastUpdated?:Date;
 }

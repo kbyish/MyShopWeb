@@ -1,14 +1,24 @@
 <p>customer-manage works!</p>
 
-<form [formGroup]="customerForm">
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
 
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName">
-  
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
+    <div class="row">
+        <label  for="first-name">First Name: </label>
+        <input  id="first-name" type="text" formControlName="firstName">
+    </div>
 
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-  
-  </form>
+    <div class="row">
+        <label for="last-name">Last Name: </label>
+        <input  id="last-name" type="text" formControlName="lastName">
+    </div>
+
+    <div class="row">
+        <label  for="email">Email: </label>
+        <input id="email" type="text" formControlName="email">
+    </div>
+
+
+    <button  class="row" type="submit">{{btnTitle}} </button>
+
+
+</form>

@@ -10,8 +10,9 @@ import { CustomerManageComponent } from './components/customer/customer-manage/c
 export const routes: Routes = [
     { path: '', redirectTo: 'customers', pathMatch: 'full' },
     { path: 'customers', component: CustomerListComponent },
-    { path: 'customerManage', component: CustomerManageComponent }
-  ];
+    { path: 'customerManage', component: CustomerManageComponent },
+    { path: 'addCustomer', component: CustomerManageComponent }  
+];
 
   @NgModule({
     imports: [RouterModule.forRoot(routes)],
